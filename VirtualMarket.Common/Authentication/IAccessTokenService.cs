@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
 
 namespace VirtualMarket.Common.Authentication
 {
-  interface IAccessTokenService
-  {
-  }
+    public interface IAccessTokenService
+    {
+        Task<bool> IsCurrentActiveToken();
+        Task DeactiveCurrentAsync(string userId);
+        Task<bool> IsActiveAsync(string token);
+        Task DeactivateAsync(string userId, string token);
+    }
 }

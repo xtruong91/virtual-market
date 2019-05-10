@@ -1,7 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <ApplicationIcon />
+        <OutputType>Library</OutputType>
+        <StartupObject />
+    </PropertyGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\..\VirtualMarket.Common\VirtualMarket.Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(Configuration)' == 'Release'">
+        <PackageReference Include="DShop.Common_" Version="2.0.4" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="OpenTracing.Contrib.NetCore" Version="0.5.0" />
+    </ItemGroup>
 </Project>

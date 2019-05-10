@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Common
+﻿namespace VirtualMarket.Common
 {
-  class AppOptions
-  {
-  }
+    public class AppOptions
+    {
+        public string Name { get; set; }
+    }
 }

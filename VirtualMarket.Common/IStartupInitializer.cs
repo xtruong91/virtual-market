@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Common
+﻿namespace VirtualMarket.Common
 {
-  interface IStartupInitializer
-  {
-  }
+    public interface IStartupInitializer
+    {
+        void AddInitializer(IInitializer initializer);
+    }
 }

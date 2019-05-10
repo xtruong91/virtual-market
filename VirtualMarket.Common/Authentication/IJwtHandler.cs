@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace VirtualMarket.Common.Authentication
 {
-  interface IJwtHandler
-  {
-  }
+    public interface IJwtHandler
+    {
+        JsonWebToken CreateToken(string userId, string role = null, IDictionary<string, string> claims = null);
+        JsonWebTokenPayload GetTokenPayload(string accessToken);
+    }
 }

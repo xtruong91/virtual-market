@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.AspNetCore.Authorization;
 
 namespace VirtualMarket.Common.Authentication
 {
-  class AuthAttribute
-  {
-  }
+    public class AuthAttribute : AuthorizeAttribute
+    {
+        public AuthAttribute(string scheme, string policy = "")
+            : base(policy)
+        {
+            AuthenticationSchemes = scheme;
+        }
+    }
 }

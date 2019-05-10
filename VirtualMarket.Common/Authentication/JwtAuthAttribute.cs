@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace VirtualMarket.Common.Authentication
 {
-  class JwtAuthAttribute
-  {
-  }
+    public class JwtAuthAttribute : AuthAttribute
+    {
+        public JwtAuthAttribute(string policy = "")
+            : base(JwtBearerDefaults.AuthenticationScheme, policy)
+        {
+        }
+    }
 }

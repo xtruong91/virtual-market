@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VirtualMarket.Services.Customers.Controllers
 {
-  class BaseController
+  public class BaseController
   {
   }
 }

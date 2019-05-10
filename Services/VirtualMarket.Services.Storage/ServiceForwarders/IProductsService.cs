@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VirtualMarket.Services.Storage.ServiceForwarders
 {
-  interface IProductsServices
+  interface IProductsService
   {
   }
 }
