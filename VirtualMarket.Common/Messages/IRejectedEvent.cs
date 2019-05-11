@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Common.Messages
+﻿namespace VirtualMarket.Common.Messages
 {
-  interface IRejectedEvent
-  {
-  }
+    public interface IRejectedEvent : IEvent
+    {
+        string Reason { get; }
+        string Code { get; }
+    }
 }

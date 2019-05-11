@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
+using VirtualMarket.Common.Types;
 
 namespace VirtualMarket.Common.Handlers
 {
-  interface IQueryHandler
-  {
-  }
+    public interface IQueryHandler<TQuery, TResult> where TQuery : IQuery<TResult>
+    {
+        Task<TResult> HandleAsync(IQuery query);
+    }
 }

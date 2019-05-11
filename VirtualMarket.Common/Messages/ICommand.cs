@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Common.Messages
+﻿namespace VirtualMarket.Common.Messages
 {
-  interface ICommand
-  {
-  }
+    public interface ICommand
+    {
+    }
 }

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Common.Messages
+﻿namespace VirtualMarket.Common.Messages
 {
-  interface IEvent
-  {
-  }
+    public interface IEvent : IMessage
+    {
+
+    }
 }

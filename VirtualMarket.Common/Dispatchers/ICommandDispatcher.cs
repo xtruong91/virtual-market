@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
+using VirtualMarket.Common.Messages;
 
 namespace VirtualMarket.Common.Dispatchers
 {
-  interface ICommandDispatcher
-  {
-  }
+    public interface ICommandDispatcher
+    {
+        Task SendAsync<T>(T Command) where T : ICommand;
+    }
 }

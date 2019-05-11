@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
+using VirtualMarket.Common.Messages;
+using VirtualMarket.Common.RabbitMq;
 
 namespace VirtualMarket.Common.Handlers
 {
-  interface IEventHandler
-  {
-  }
+    public interface IEventHandler<in TEvent> where TEvent : IEvent
+    {
+        Task HandleAsync(TEvent @event, ICorrelationContext context);
+    }
 }

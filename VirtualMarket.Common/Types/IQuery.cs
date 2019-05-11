@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Common.Types
+﻿namespace VirtualMarket.Common.Types
 {
-  interface IQuery
-  {
-  }
+    public interface IQuery
+    {
+
+    }
+    public interface IQuery<T> : IQuery
+    {
+    }
 }
