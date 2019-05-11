@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Consul;
+using System.Threading.Tasks;
 
 namespace VirtualMarket.Common.Consul
 {
-  interface IConsulServicesRegistry
-  {
-  }
+    public interface IConsulServicesRegistry
+    {
+        Task<AgentService> GetAsync(string name);
+    }
 }

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Common.Mvc
+﻿namespace VirtualMarket.Common.Mvc
 {
-  interface IServiceId
-  {
-  }
+    public interface IServiceId
+    {
+        string Id { get; }
+    }
 }
