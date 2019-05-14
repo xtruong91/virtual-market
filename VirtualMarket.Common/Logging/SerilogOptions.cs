@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Common.Logging
+﻿namespace VirtualMarket.Common.Logging
 {
-  class SerilogOptions
-  {
-  }
+    public class SerilogOptions
+    {
+        public bool ConsoleEnabled { get; set; }
+        public string Level { get; set; }
+    }
 }

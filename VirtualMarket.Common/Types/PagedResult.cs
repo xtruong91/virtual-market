@@ -1,10 +1,34 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace VirtualMarket.Common.Types
 {
-  class PagedResult
-  {
-  }
+    public class PagedResult<T> : PagedResultBase
+    {
+        public IEnumerable<T> Items { get; }
+        public bool IsEmpty => Items == null || !Items.Any();
+        public bool IsNotEmpty => !IsEmpty;
+        protected PagedResult()
+        {
+            Items = Enumerable.Empty<T>();
+        }
+        [JsonConstructor]
+        protected PagedResult(IEnumerable<T> items,
+            int currentPage, int resultsPage,
+            int totalPages, long totalResults)
+                : base(currentPage, resultsPage, totalPages, totalResults)
+        {
+            Items = items;
+        }
+        public static PagedResult<T> Create(IEnumerable<T> items,
+            int currentPage, int resultsPerPage,
+            int totalPages, long totalResults)
+                => new PagedResult<T>(items, currentPage, resultsPerPage, totalPages, totalResults);
+        public static PagedResult<T> From(PagedResultBase result, IEnumerable<T> items)
+                => new PagedResult<T>(items, result.CurrentPage, result.ResultsPerPage,
+                    result.TotalPages, result.TotalPages);
+        public static PagedResult<T> Empty => new PagedResult<T>();
+
+    }
 }

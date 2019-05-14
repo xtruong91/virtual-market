@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Common.MailKit
+﻿namespace VirtualMarket.Common.MailKit
 {
-  class MailKitOptions
-  {
-  }
+    public class MailKitOptions
+    {
+        public string SmptHost { get; set; }
+        public int Port { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+    }
 }

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
 
 namespace VirtualMarket.Common.Mongo
 {
-  interface IMongoDbSeeder
-  {
-  }
+    public interface IMongoDbSeeder
+    {
+        Task SeedAsync();
+    }
 }

@@ -1,6 +1,6 @@
 ﻿namespace VirtualMarket.Common.Messages
 {
-    public interface ICommand
+    public interface ICommand : IMessage
     {
     }
 }

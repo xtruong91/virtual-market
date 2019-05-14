@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Common.Mongo
+﻿namespace VirtualMarket.Common.Mongo
 {
-  interface IMongoDbInitializer
-  {
-  }
+    public interface IMongoDbInitializer : IInitializer
+    {
+
+    }
 }

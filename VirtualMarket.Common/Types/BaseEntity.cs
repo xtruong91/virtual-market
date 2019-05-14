@@ -1,10 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace VirtualMarket.Common.Types
 {
-  class BaseEntity
-  {
-  }
+    public abstract class BaseEntity : IIdentifiable
+    {
+        public Guid Id { get; protected set; }
+        public DateTime CreateDate { get; protected set; }
+        public DateTime UpdateDate { get; protected set; }
+        public BaseEntity(Guid id)
+        {
+            Id = id;
+            CreateDate = DateTime.UtcNow;
+            SetUpdateDate();
+        }
+
+        protected virtual void SetUpdateDate()
+            => UpdateDate = DateTime.UtcNow;
+    }
 }

@@ -1,10 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Autofac;
+using Microsoft.Extensions.Configuration;
 
 namespace VirtualMarket.Common.MailKit
 {
-  class Extensions
-  {
-  }
+    public static class Extensions
+    {
+        public static void AddMailKit(this ContainerBuilder builder)
+        {
+            builder.Register(context =>
+            {
+                var configuration = context.Resolve<IConfiguration>();
+                var options = configuration.GetOptions<MailKitOptions>("mailkit");
+                return options;
+            }).SingleInstance();
+        }
+    }
 }

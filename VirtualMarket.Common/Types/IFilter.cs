@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace VirtualMarket.Common.Types
 {
-  interface IFilter
-  {
-  }
+    public interface IFilter<TResult, in TQuery> where TQuery : IQuery
+    {
+        IEnumerable<TResult> Filter(IEnumerable<TResult> values, TQuery query);
+    }
 }
