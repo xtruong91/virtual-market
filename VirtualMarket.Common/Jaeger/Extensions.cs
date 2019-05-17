@@ -53,7 +53,7 @@ namespace VirtualMarket.Common.Jaeger
             return services;
         }
 
-        public static IClientBuilder UserJaeger(this IClientBuilder builder, ITracer tracer)
+        public static IClientBuilder UseJaeger(this IClientBuilder builder, ITracer tracer)
         {
             builder.Register(pipe =>
                 pipe.Use<JaegerStagedMiddleware>(tracer));

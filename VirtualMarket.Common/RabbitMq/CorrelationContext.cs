@@ -73,8 +73,6 @@ namespace VirtualMarket.Common.RabbitMq
                 connectionId, string.Empty, typeof(T).Name, origin, culture
                 , resource, 0);
         private string GetName(string name)
-        {
-            throw new NotImplementedException();
-        }
+            => name.Underscore().ToLowerInvariant();
     }
 }
