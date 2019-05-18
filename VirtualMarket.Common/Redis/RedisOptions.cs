@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Common.Redis
+﻿namespace VirtualMarket.Common.Redis
 {
-  class RedisOptions
-  {
-  }
+    public class RedisOptions
+    {
+        public string ConnectionString { get; set; }
+        public string Instance { get; set; }
+    }
 }
