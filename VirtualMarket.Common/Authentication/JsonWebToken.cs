@@ -12,4 +12,3 @@ namespace VirtualMarket.Common.Authentication
         public IDictionary<string, string> Claims { get; set; }
     }
 }
-}

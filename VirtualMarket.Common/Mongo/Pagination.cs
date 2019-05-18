@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver.Linq;
+﻿using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using System;
 using System.Threading.Tasks;
 using VirtualMarket.Common.Types;

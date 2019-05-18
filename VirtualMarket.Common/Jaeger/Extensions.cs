@@ -48,6 +48,8 @@ namespace VirtualMarket.Common.Jaeger
                                 .WithSampler(sampler)
                                 .Build();
                 GlobalTracer.Register(tracer);
+
+                return tracer;
             });
 
             return services;

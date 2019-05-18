@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using VirtualMarket.Common.Types;
 
 namespace VirtualMarket.Services.Customers.Domain
 {
-  class Product
-  {
-  }
+    public class Product : IIdentifiable
+    {
+        public Guid Id => throw new NotImplementedException();
+    }
 }

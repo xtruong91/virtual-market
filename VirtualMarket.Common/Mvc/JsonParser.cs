@@ -8,14 +8,15 @@ namespace VirtualMarket.Common.Mvc
 {
     public class JsonParser
     {
-        private readonly IDictionary<string, string> _mappings = new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        private readonly IDictionary<string, string> _mappings = 
+            new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         private readonly Stack<string> _stack = new Stack<string>();
 
         private string _currentPath;
 
         public IDictionary<string, string> Parse(JObject jObject)
         {
-            VisiteObject(jObject);
+            VisitJObject(jObject);
             return _mappings;
         }
 

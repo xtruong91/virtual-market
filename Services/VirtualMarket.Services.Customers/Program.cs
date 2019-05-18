@@ -1,6 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+using VirtualMarket.Common.Logging;
+using VirtualMarket.Common.Metrics;
+using VirtualMarket.Common.Mvc;
+using VirtualMarket.Common.Vault;
 
 namespace VirtualMarket.Services.Customers
 {
@@ -17,6 +20,6 @@ namespace VirtualMarket.Services.Customers
                 .UseLogging()
                 .UseVault()
                 .UseLockbox()
-                .UseAppMetrics();
+                .UserAppMetrics();
     }
 }
