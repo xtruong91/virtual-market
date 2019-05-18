@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace VirtualMarket.Services.Customers.Dto
 {
-  class OrderDto
-  {
-  }
+    public class OrderDto
+    {
+        public Guid Id { get; set; }
+        public Guid CustomerId { get; set; }
+    }
 }

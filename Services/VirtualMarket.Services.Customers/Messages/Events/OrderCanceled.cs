@@ -1,10 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using VirtualMarket.Common.Messages;
 
 namespace VirtualMarket.Services.Customers.Messages.Events
 {
-  class OrderCanceled
-  {
-  }
+    [MessageNamespace("orders")]
+    public class OrderCanceled : IEvent
+    {
+        public Guid Id { get; }
+        public Guid CustomerId { get; }
+        public OrderCanceled(Guid id, Guid customerId)
+        {
+            Id = id;
+            CustomerId = customerId;
+        }
+    }
 }

@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using VirtualMarket.Common.Types;
+using VirtualMarket.Services.Customers.Dto;
 
 namespace VirtualMarket.Services.Customers.Queries
 {
-  class GetCart
-  {
-  }
+    public class GetCart : IQuery<CartDto>
+    {
+        public Guid Id { get; set; }
+    }
 }

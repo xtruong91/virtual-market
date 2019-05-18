@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace VirtualMarket.Services.Customers.Controllers
 {
-  class HomeController
-  {
-  }
+    public class HomeController : ControllerBase
+    {
+        [HttpGet]
+        public IActionResult Get() => Ok("Virtual Market Customers Service");
+    }
 }

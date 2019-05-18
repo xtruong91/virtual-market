@@ -1,10 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Newtonsoft.Json;
+using System;
+using VirtualMarket.Common.Messages;
 
 namespace VirtualMarket.Services.Customers.Messages.Commands
 {
-  class ClearCart
-  {
-  }
+    public class ClearCart : ICommand
+    {
+        public Guid CustomerId { get; }
+        [JsonConstructor]
+        public ClearCart(Guid customerId)
+        {
+            CustomerId = customerId;
+        }
+    }
 }
