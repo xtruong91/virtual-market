@@ -1,10 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace VirtualMarket.Discounts.Dto
 {
-  class DiscountDto
-  {
-  }
+    public class DiscountDto
+    {
+        public Guid Id { get; set; }
+        public Guid CustomerId { get; set; }
+        public string Code { get; set; }
+        public double Percentage { get; set; }
+        public bool Available { get; set; }
+    }
 }

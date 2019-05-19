@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace VirtualMarket.Discounts.Dto
 {
-  class CustomerDto
-  {
-  }
+    public class CustomerDto
+    {
+        public Guid Id { get; set; }
+        public string Email { get; set; }
+    }
 }

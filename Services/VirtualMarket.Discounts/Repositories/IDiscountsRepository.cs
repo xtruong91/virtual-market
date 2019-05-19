@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
+using VirtualMarket.Discounts.Domain;
 
 namespace VirtualMarket.Discounts.Repositories
 {
-  interface IDiscountsRepository
-  {
-  }
+    public interface IDiscountsRepository
+    {
+        Task AddAsync(Discount discount);
+        Task UpdateAsync(Discount discount);
+    }
 }

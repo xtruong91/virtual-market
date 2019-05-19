@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Discounts.Dto
+﻿namespace VirtualMarket.Discounts.Dto
 {
-  class DiscountDetailsDto
-  {
-  }
+    public class DiscountDetailsDto
+    {
+        public CustomerDto Customer { get; set; }
+        public DiscountDto Discount { get; set; }
+    }
 }

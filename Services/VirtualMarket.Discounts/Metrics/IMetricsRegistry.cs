@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Discounts.Metrics
+﻿namespace VirtualMarket.Discounts.Metrics
 {
-  interface IMetricsRegistry
-  {
-  }
+    public interface IMetricsRegistry
+    {
+        void IncrementFindDiscountsQuery();
+    }
 }

@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace VirtualMarket.Discounts.Dto
 {
-  class OrderDetailsDto
-  {
-  }
+    public class OrderDetailsDto
+    {
+        public Guid Id { get; set; }
+        public Guid CustomerId { get; set; }
+        public int ItemsCount { get; set; }
+        public decimal TotalAmount { get; set; }
+        public string Currency { get; set; }
+        public string Status { get; set; }
+        public IEnumerable<OrderItemDto> Items { get; set; }
+    }
 }

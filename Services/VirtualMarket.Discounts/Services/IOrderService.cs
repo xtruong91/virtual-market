@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using RestEase;
+using System;
+using System.Threading.Tasks;
+using VirtualMarket.Discounts.Dto;
 
 namespace VirtualMarket.Discounts.Services
 {
-  interface IOrderService
-  {
-  }
+    public interface IOrderService
+    {
+        [AllowAnyStatusCode]
+        [Get("orders/{id}")]
+        Task<OrderDetailsDto> GetAsync([Path] Guid id);
+    }
 }

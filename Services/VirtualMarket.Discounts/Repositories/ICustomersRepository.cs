@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
+using VirtualMarket.Discounts.Domain;
 
 namespace VirtualMarket.Discounts.Repositories
 {
-  interface ICustomersRepository
-  {
-  }
+    public interface ICustomersRepository
+    {
+        Task<Customer> GetAsync(Guid id);
+        Task AddAsync(Customer customer);
+    }
 }

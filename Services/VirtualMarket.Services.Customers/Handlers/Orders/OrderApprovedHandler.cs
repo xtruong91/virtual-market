@@ -23,7 +23,7 @@ namespace VirtualMarket.Services.Customers.Handlers.Orders
             var cart = await _cartsRepository.GetAsync(@event.CustomerId);
             foreach (var cartItem in cart.Items)
             {
-                var product = await _productsRepository.GetAsync(cartItem.ProductId));
+                var product = await _productsRepository.GetAsync(cartItem.ProductId);
                 if (product == null)
                 {
                     continue;

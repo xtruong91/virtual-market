@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using VirtualMarket.Common.Types;
+using VirtualMarket.Discounts.Dto;
 
 namespace VirtualMarket.Discounts.Queries
 {
-  class FindDiscounts
-  {
-  }
+    public class FindDiscounts : IQuery<IEnumerable<DiscountDto>>
+    {
+        public Guid CustomerId { get; set; }
+    }
 }

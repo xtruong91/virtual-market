@@ -1,10 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Newtonsoft.Json;
+using System;
+using VirtualMarket.Common.Messages;
 
 namespace VirtualMarket.Discounts.Messages.Events
 {
-  class CreateDiscountRejected
-  {
-  }
+    public class CreateDiscountRejected : IRejectedEvent
+    {
+        public Guid CustomerId { get; }
+        public string Reason { get; }
+        public string Code { get; }
+
+        [JsonConstructor]
+        public CreateDiscountRejected(Guid customerId, string reason, string code)
+        {
+            CustomerId = customerId;
+            Reason = reason;
+            Code = code;
+        }
+    }
 }

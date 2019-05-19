@@ -25,7 +25,7 @@ namespace VirtualMarket.Services.Customers.Domain
         {
             if (quantity < 0)
             {
-                throw new VirtualMarketException("Invalid_product_quantity".
+                throw new VirtualMarketException("Invalid_product_quantity",
                     "Product quantity cannot be negative");
             }
             Quantity = quantity;
