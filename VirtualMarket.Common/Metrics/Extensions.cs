@@ -10,7 +10,7 @@ namespace VirtualMarket.Common.Metrics
     public static class Extensions
     {
         private static bool _initialized;
-        public static IWebHostBuilder UserAppMetrics(this IWebHostBuilder webHostBuilder)
+        public static IWebHostBuilder UseAppMetrics(this IWebHostBuilder webHostBuilder)
         {
             if (!_initialized)
             {

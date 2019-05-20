@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Services.SignalR.Framework
+﻿namespace VirtualMarket.Services.SignalR.Framework
 {
-  class SignalrOptions
-  {
-  }
+    public class SignalrOptions
+    {
+        public string Backplane { get; set; }
+        public string Hub { get; set; }
+    }
 }

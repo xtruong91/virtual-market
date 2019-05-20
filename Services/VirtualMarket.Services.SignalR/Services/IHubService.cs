@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
+using VirtualMarket.Services.SignalR.Messages.Events;
 
 namespace VirtualMarket.Services.SignalR.Services
 {
-  interface IHubService
-  {
-  }
+    public interface IHubService
+    {
+        Task PublishOperationPendingAsync(OperationPending @event);
+        Task PublishOperationCompletedAsync(OperationCompleted @event);
+        Task PublishOperationRejectedAsync(OperationRejected @event);
+    }
 }

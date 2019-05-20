@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace VirtualMarket.Services.SignalR.Framework
 {
-  class Extensions
-  {
-  }
+    public static class Extensions
+    {
+        public static string ToUserGroup(this Guid userId)
+            => $"users:{userId}";
+    }
 }
