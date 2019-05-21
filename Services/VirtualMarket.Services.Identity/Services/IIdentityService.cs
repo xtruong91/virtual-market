@@ -1,10 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
+using VirtualMarket.Common.Authentication;
+using VirtualMarket.Services.Identity.Domain;
 
 namespace VirtualMarket.Services.Identity.Services
 {
-  interface IIdentityService
-  {
-  }
+    public interface IIdentityService
+    {
+        Task SignUpAsync(Guid id, string email, string password, string role = Role.User);
+        Task<JsonWebToken> SignInAsync(string email, string password);
+        Task ChangePasswordAsync(Guid userId, string currentPassword, string newPassword);
+    }
 }

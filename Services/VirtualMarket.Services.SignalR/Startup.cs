@@ -16,9 +16,9 @@ using VirtualMarket.Common.Mvc;
 using VirtualMarket.Common.RabbitMq;
 using VirtualMarket.Common.Redis;
 using VirtualMarket.Common.Swagger;
-using VirtualMarket.Services.Customers.Messages.Commands;
-using VirtualMarket.Services.Customers.Messages.Events;
 using VirtualMarket.Services.SignalR.Framework;
+using VirtualMarket.Services.SignalR.Hubs;
+using VirtualMarket.Services.SignalR.Messages.Events;
 
 namespace VirtualMarket.Services.SignalR
 {
@@ -86,25 +86,19 @@ namespace VirtualMarket.Services.SignalR
             app.UseStaticFiles();
             app.UseSwaggerDocs();
             app.UseErrorHandler();
+            app.UseAuthentication();
+            app.UseAccessTokenValidator();
             app.UseServiceId();
+            app.UseSignalR(routes => 
+            {
+                routes.MapHub<VirtualMarketHub>($"/{signalrOptions.Hub}");
+            });
             app.UseMvc();
             app.UseRabbitMq()
-                .SubscribeCommand<CreateCustomer>(onError: (c, e) =>
-                    new CreateCustomerRejected(c.Id, e.Message, e.Code))
-                .SubscribeCommand<AddProductToCart>(onError: (c, e) =>
-                    new AddProductToCartRejected(c.CustomerId, c.ProductId, c.Quantity, e.Message, e.Code))
-                .SubscribeCommand<DeleteProductFromCart>(onError: (c, e) =>
-                    new DeleteProductFromCartRejected(c.CustomerId, c.ProductId, e.Message, e.Code))
-                .SubscribeCommand<ClearCart>(onError: (c, e) =>
-                    new ClearCartRejected(c.CustomerId, e.Message, e.Code))
-                .SubscribeEvent<SignedUp>(@namespace: "identity")
-                .SubscribeEvent<ProductCreated>(@namespace: "products")
-                .SubscribeEvent<ProductUpdated>(@namespace: "products")
-                .SubscribeEvent<ProductDeleted>(@namespace: "products")
-                .SubscribeEvent<OrderApproved>(@namespace: "orders")
-                .SubscribeEvent<OrderCompleted>(@namespace: "orders")
-                .SubscribeEvent<OrderCanceled>(@namespace: "orders");
-
+                .SubscribeEvent<OperationPending>(@namespace: "operations")
+                .SubscribeEvent<OperationCompleted>(@namespace: "operations")
+                .SubscribeEvent<OperationRejected>(@namespace: "operations");
+                
             var consulServiceId = app.UseConsul();
             applicationLifetime.ApplicationStopped.Register(() =>
             {
@@ -112,7 +106,7 @@ namespace VirtualMarket.Services.SignalR
                 Container.Dispose();
             });
 
-            startupInitializer.InitializeAsync();
+            (startupInitializer as StartupInitializer).InitializeAsync();
         }
     }
 }

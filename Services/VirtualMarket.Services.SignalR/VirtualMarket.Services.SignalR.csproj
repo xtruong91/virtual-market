@@ -10,6 +10,7 @@
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\..\VirtualMarket.Common\VirtualMarket.Common.csproj" />
+      <ProjectReference Include="..\VirtualMarket.Services.Customers\VirtualMarket.Services.Customers.csproj" />
     </ItemGroup>
 
 </Project>

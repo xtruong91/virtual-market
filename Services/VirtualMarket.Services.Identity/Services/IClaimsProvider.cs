@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace VirtualMarket.Services.Identity.Services
 {
-  interface IClaimsProvider
-  {
-  }
+    public interface IClaimsProvider
+    {
+        Task<IDictionary<string, string>> GetAsync(Guid userId);
+    }
 }

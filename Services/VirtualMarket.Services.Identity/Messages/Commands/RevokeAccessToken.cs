@@ -1,10 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using VirtualMarket.Common.Messages;
 
 namespace VirtualMarket.Services.Identity.Messages.Commands
 {
-  class RevokeAccessToken
-  {
-  }
+    public class RevokeAccessToken : ICommand
+    {
+        public Guid UserId { get; }
+        public string Token { get; }
+        public RevokeAccessToken(Guid userId, string token)
+        {
+            UserId = userId;
+            Token = token;
+        }
+    }
 }

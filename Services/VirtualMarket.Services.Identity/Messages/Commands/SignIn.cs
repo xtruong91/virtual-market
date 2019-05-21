@@ -1,10 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Newtonsoft.Json;
+using VirtualMarket.Common.Messages;
 
 namespace VirtualMarket.Services.Identity.Messages.Commands
 {
-  class SignIn
-  {
-  }
+    public class SignIn : ICommand
+    {
+        public string Email { get; }
+        public string Password { get; }
+        [JsonConstructor]
+        public SignIn(string email, string password)
+        {
+            Email = email;
+            Password = password;
+        }
+    }
 }

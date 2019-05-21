@@ -11,7 +11,6 @@ namespace VirtualMarket.Common.RabbitMq
             where TCommand : ICommand;
         IBusSubscriber SubscribeEvent<TEvent>(string @namespace = null, string queueName = null,
             Func<TEvent, VirtualMarketException, IRejectedEvent> onError = null)
-            where TEvent : IEvent;
-        object SubscribeCommand<T>(Func<object, object, CreateCustomerRejected> onError);
+            where TEvent : IEvent;   
     }
 }

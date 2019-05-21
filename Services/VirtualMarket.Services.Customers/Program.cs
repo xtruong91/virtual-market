@@ -20,6 +20,6 @@ namespace VirtualMarket.Services.Customers
                 .UseLogging()
                 .UseVault()
                 .UseLockbox()
-                .UserAppMetrics();
+                .UseAppMetrics();
     }
 }
