@@ -1,9 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
+using VirtualMarket.Common.Messages;
 
 namespace VirtualMarket.Services.Identity.Messages.Commands
 {
-    public class SignUp
+    public class SignUp : ICommand
     {
         public Guid Id { get; }
         public string Email { get; }

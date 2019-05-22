@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MimeKit;
+using System.Threading.Tasks;
 
 namespace VirtualMarket.Services.Notifications.Serviecs
 {
-  interface IMessagesService
-  {
-  }
+    public interface IMessagesService
+    {
+        Task SendAsync(MimeMessage message);
+    }
 }

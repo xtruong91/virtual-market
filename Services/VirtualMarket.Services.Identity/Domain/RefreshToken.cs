@@ -29,6 +29,7 @@ namespace VirtualMarket.Services.Identity.Domain
                 throw new VirtualMarketException(Codes.RefreshTokenAlreadyRevoked,
                     $"Refresh token: '{Id}' was already revoked at '{RevokedAt}'. ");
             }
+            RevokedAt = DateTime.UtcNow;
         }
         private string CreateToken(User user, IPasswordHasher<User> passwordHasher)
             => passwordHasher.HashPassword(user, Guid.NewGuid().ToString("N"))

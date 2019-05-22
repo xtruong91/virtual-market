@@ -57,7 +57,7 @@ namespace VirtualMarket.Common.RabbitMq
             return this;
         }
 
-        public IBusSubscriber SubscriberCommand<TCommand>(string @namespace = null,
+        public IBusSubscriber SubscribeCommand<TCommand>(string @namespace = null,
             string queueName = null, Func<TCommand, VirtualMarketException, IRejectedEvent> onError = null)
             where TCommand : ICommand
         {

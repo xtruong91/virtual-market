@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using RestEase;
+using System;
+using System.Threading.Tasks;
+using VirtualMarket.Services.Notifications.Dto;
 
 namespace VirtualMarket.Services.Notifications.Serviecs
 {
-  interface ICustomersService
-  {
-  }
+    public interface ICustomersService
+    {
+        [AllowAnyStatusCode]
+        [Get("customers/{id}")]
+        Task<CustomerDto> GetAsync([Path] Guid id);
+    }
 }

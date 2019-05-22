@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace VirtualMarket.Services.Notifications.Controllers
 {
-  class HomeController
-  {
-  }
+    [Route("")]
+    public class HomeController : ControllerBase
+    {
+        public IActionResult Get() => Ok("Virtual market notification services");
+    }
 }
