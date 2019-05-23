@@ -1,10 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Newtonsoft.Json;
+using System;
+using VirtualMarket.Common.Messages;
 
 namespace VirtualMarket.Services.Operations.Messages.Orders.Commands
 {
-  class CreateOrder
-  {
-  }
+    [MessageNamespace("orders")]
+    public class CreateOrder : ICommand
+    {
+        public Guid Id { get; }
+        public Guid CustomerId { get; }
+        [JsonConstructor]
+        public CreateOrder(Guid id, Guid customerId)
+        {
+            Id = id;
+            CustomerId = customerId;
+        }
+    }
 }

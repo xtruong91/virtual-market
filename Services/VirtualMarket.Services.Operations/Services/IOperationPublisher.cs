@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
+using VirtualMarket.Common.RabbitMq;
 
 namespace VirtualMarket.Services.Operations.Services
 {
-  interface IOperationPublisher
-  {
-  }
+    public interface IOperationPublisher
+    {
+        Task PendingAsync(ICorrelationContext context);
+        Task CompleteAsync(ICorrelationContext context);
+        Task RejectAsync(ICorrelationContext context, string code, string message);
+    }
 }

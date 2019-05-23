@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VirtualMarket.Services.Operations
+﻿namespace VirtualMarket.Services.Operations
 {
-  class OperationState
-  {
-  }
+    public enum OperationState
+    {
+        Pending,
+        Completed,
+        Rejected
+    }
 }
