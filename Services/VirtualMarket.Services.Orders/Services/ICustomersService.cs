@@ -5,10 +5,10 @@ using VirtualMarket.Services.Orders.Dto;
 
 namespace VirtualMarket.Services.Orders.Services
 {
-    public interface IProductsService
+    public interface ICustomersService
     {
         [AllowAnyStatusCode]
-        [Get("products/{id}")]
-        Task<OrderItemDto> GetAsync([Path] Guid id);
+        [Get("carts/{id}")]
+        Task<CartDto> GetCartAsync([Path] Guid id);
     }
 }

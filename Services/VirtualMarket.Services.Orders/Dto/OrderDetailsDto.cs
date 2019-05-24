@@ -4,7 +4,9 @@ using System.Text;
 
 namespace VirtualMarket.Services.Orders.Dto
 {
-  class OrderDetailsDto
+  public class OrderDetailsDto : OrderDto
   {
+        public CustomerDto Customer { get; set; }
+        public IEnumerable<OrderItemDto> Items { get; set; }
   }
 }

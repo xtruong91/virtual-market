@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VirtualMarket.Services.Products.Domain
 {
-  class Product
+  public class Product
   {
   }
 }

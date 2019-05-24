@@ -1,10 +1,22 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Text;
+using VirtualMarket.Common.Messages;
 
 namespace VirtualMarket.Services.Orders.Messages.Events
 {
-  class OrderCreated
-  {
-  }
+    public class OrderCreated : IEvent
+    {
+        public Guid Id { get; }
+        public Guid CustomerId { get; }
+        public IDictionary<Guid, int> Products { get; }
+
+        [JsonConstructor]
+        public OrderCreated(Guid id, Guid customerId, IDictionary<Guid, int> products)
+        {
+            Id = id;
+            CustomerId = customerId;
+            Products = products;
+        }
+    }
 }

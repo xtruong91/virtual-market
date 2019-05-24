@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace VirtualMarket.Services.Orders.Controllers
 {
-  class HomeController
-  {
-  }
+    [Route("")]
+    public class HomeController : ControllerBase
+    {
+        [HttpGet]
+        public IActionResult Get() => Ok("DShop Orders Service");
+    }
 }

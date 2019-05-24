@@ -1,10 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Newtonsoft.Json;
+using System;
+using VirtualMarket.Common.Messages;
 
 namespace VirtualMarket.Services.Orders.Messages.Commands
 {
-  class ApproveOrder
-  {
-  }
+    [MessageNamespace("orders")]
+    public class ApproveOrder : ICommand
+    {
+        public Guid Id { get; }
+        [JsonConstructor]
+        public ApproveOrder(Guid id)
+        {
+            Id = id;
+        }
+    }
 }
