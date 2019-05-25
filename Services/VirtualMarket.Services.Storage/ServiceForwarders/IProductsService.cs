@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using RestEase;
+using System;
+using System.Threading.Tasks;
+using VirtualMarket.Services.Storage.Models.Products;
 
 namespace VirtualMarket.Services.Storage.ServiceForwarders
 {
-  interface IProductsService
-  {
-  }
+    public interface IProductsService
+    {
+        [Get("/products/{id}")]
+        Task<Product> GetProductByIdAsync([Path] Guid id);
+    }
 }

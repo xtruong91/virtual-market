@@ -1,10 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Newtonsoft.Json;
+using System;
+using VirtualMarket.Common.Messages;
 
 namespace VirtualMarket.Services.Products.Messages.Events
 {
-  class ProductDeleted
-  {
-  }
+    public class ProductDeleted : IEvent
+    {
+        public Guid Id { get; }
+
+        [JsonConstructor]
+        public ProductDeleted(Guid id)
+        {
+            Id = id;
+        }
+    }
 }

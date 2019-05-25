@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace VirtualMarket.Services.Products.Dto
 {
-  class OrderItemDto
-  {
-  }
+    public class OrderItemDto
+    {
+        public Guid Id { get; set; }
+        public int Quantity { get; set; }
+    }
 }
